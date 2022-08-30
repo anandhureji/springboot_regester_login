@@ -1,4 +1,4 @@
-package net.javaguides.springboot;
+package net.javaguides.springboot.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,12 +12,14 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
 @Entity
 @Table(name="role")
 public class Role {
+
+	public Role(String name) {
+		super();
+		this.name = name;
+	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
